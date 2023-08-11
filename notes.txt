@@ -1,0 +1,20 @@
+--> tsc --noEmitError example.ts     :::> ( Ts kodunda bir hata varsa js file uretmemesi icin kullanacagimiz terminal kodu)
+
+--> npm init    :::> (to initialize start folders package.json)
+
+--> npm install lite-server    :::> ( Browser server setup)
+
+--> package.json uzerinde "test":"express" ==> "start":"lite-server"
+
+--> tsc deneme.ts >>>> tsc --watch --noEmitOnError deneme.ts   (ts dosyasida degisiklik yaptigimizda her seferinde compiile etmek yerini 
+yandaki kodu kullanip browseri yenileyebiliriz)
+
+--> tsc deneme.ts --outDir ../dist    :::> (Paralel uzantidaki başka dosyada js dosyasinin olusmasini isterdem kullanmam gerkeen)
+
+--> tsconfig dosyasinda rootDir ve outDir ayarladiktan sonra tsc komutunu tsconfig dosyasinin olduğu yerde calistirmalisin. aksi takdirde 
+configurasyonlari uygulayamaz. 
+
+--> tsc komutunu dosya adi belirtmeden kullanirsan otomatik olarak butun ts dosyalarini js'e cevirir. dosya adi belirterek spesifik ts 
+dosyasinin js formatini elde edebilirsin. Ayrica ts dosyasinda bir degisiklik yapilirsa js dosyasi tsc almadan kendini update etmez..
+
+--> tsc --strictNullCheck file.ts ==> number declere edilmis bir degiskene null atamasi yapildiysa compile ederken kontrol etmek icin kullanilir..
