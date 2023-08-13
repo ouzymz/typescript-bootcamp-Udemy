@@ -9,6 +9,8 @@
 --> tsc deneme.ts >>>> tsc --watch --noEmitOnError deneme.ts   (ts dosyasida degisiklik yaptigimizda her seferinde compiile etmek yerini 
 yandaki kodu kullanip browseri yenileyebiliriz)
 
+--> tsc --init  :::> tsconfig dosyasini olusturmak icin kullanilir.
+
 --> tsc deneme.ts --outDir ../dist    :::> (Paralel uzantidaki başka dosyada js dosyasinin olusmasini isterdem kullanmam gerkeen)
 
 --> tsconfig dosyasinda rootDir ve outDir ayarladiktan sonra tsc komutunu tsconfig dosyasinin olduğu yerde calistirmalisin. aksi takdirde 

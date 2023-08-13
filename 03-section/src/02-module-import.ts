@@ -2,4 +2,6 @@ import { Course, PAGE_SIZE } from "./01-module-export" //DISARIDAN KULLANACAKLAR
 
 export const pageSize = PAGE_SIZE; //IMPORT EDILEN MODULEDEN GELMISTIR
 
+
 export const importedCourse = Course;
+

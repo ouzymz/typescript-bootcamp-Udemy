@@ -8,11 +8,13 @@ export const Course : {name:string,hour:number,studentName:string} = {
     studentName : "Oguzhan"
 }
 
+//DEFAULT FUNCTION EXPORT. 
+
 export default function printCourse (Course:object){
     console.log(Course);
 }
 
-const pageSize : number = 100;
+export const pageSize : number = 100;
 
 
 
