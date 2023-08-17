@@ -2,6 +2,9 @@
 
 --> npm init    :::> (to initialize start folders package.json)
 
+--> npm install node    :::> (to initialize start folders package.json)
+
+
 --> npm install lite-server    :::> ( Browser server setup)
 
 --> package.json uzerinde "test":"express" ==> "start":"lite-server"
