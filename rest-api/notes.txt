@@ -1,0 +1,23 @@
+Project Start steps:
+
+--> npm init : (to create package.json)
+--> npm install --save-dev typescript 
+--> tsc --init : (to create default tsconfig.json)
+-->package.json duzenlenmasi
+    "scripts": {
+    "build": "tsc",
+    "start-server": " node dist/server.js" },
+--> npm install --save-dev @types/express : 
+--> root ve server ts hazirlanir.
+--> npm install --save-def rimraf : ( to completely clean the dist folder at the beginning of our build process. )
+--> npm i --save-dev npm-run-all : ()
+--> npm install --save-dev tsc-watch
+--> npm intall dotenv --save 
+--> gitignore klasorunde .env dahil etmeyi unutma.
+ 
+
+
+
+NOTLAR: 
+
+package.json icine yazilan scriptler "node 'value-script-adi'" komutunu terminalda kullanmamiza yarar. npm run 'key-script-adi' komutu ile terminal uzerinde kullanilabilir.
