@@ -14,8 +14,10 @@ Project Start steps:
 --> npm install --save-dev tsc-watch
 --> npm intall dotenv --save 
 --> gitignore klasorunde .env dahil etmeyi unutma.
- 
+--> npm install --save winston : (to create logging system)
 
+
+--> psql (URI from cloud like heroku)
 
 
 NOTLAR: 

@@ -12,6 +12,7 @@ if (result.error) {
 import express from "express";
 import { root } from "./routes/root";
 import { isInteger } from "./utils";
+import { logger } from "./logger"; //it must be called after the .env imported !!IMPORTANT 
 
 const app = express();
 
@@ -35,7 +36,7 @@ function startServer() {
   // console.log(process.argv); // package.json filedeki tsc-watch : comment argumentlerini gosterir
 
   app.listen(port, () => {
-    console.log(
+    logger.info(
       `HTTP REST API Server is now running at http://localhost:${port}`
     );
   });
