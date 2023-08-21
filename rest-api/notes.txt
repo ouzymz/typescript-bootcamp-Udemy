@@ -23,3 +23,21 @@ Project Start steps:
 NOTLAR: 
 
 package.json icine yazilan scriptler "node 'value-script-adi'" komutunu terminalda kullanmamiza yarar. npm run 'key-script-adi' komutu ile terminal uzerinde kullanilabilir.
+
+psql commands:
+
+\dt  == database table'lerini getirir.
+\q   == kapatmak icin kullanilir.
+\Ds "TABLE_NAME"  == table'in kolon ozelliklerini geitrir.
+
+
+
+TypeORM Datamapper pattern: 
+
+--> npm install typeorm --save
+--> npm install pg -save : to instal postgre
+--> add database credential into .env file from cloud host. 
+--> npm install --save reflect-metadata :: 
+
+
+

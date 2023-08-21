@@ -9,10 +9,12 @@ if (result.error) {
   console.log(process.env.PORT);
 }
 
+import "reflect-metadata"; //typeORM kutuphanesi
 import express from "express";
 import { root } from "./routes/root";
 import { isInteger } from "./utils";
-import { logger } from "./logger"; //it must be called after the .env imported !!IMPORTANT 
+import { logger } from "./logger"; //it must be called after the .env imported !!IMPORTANT
+import { AppDataSource } from "./data-source";
 
 const app = express();
 
@@ -42,6 +44,12 @@ function startServer() {
   });
 }
 
-setupExpress();
-
-startServer();
+AppDataSource.initialize()
+  .then(() => {
+    setupExpress();
+    startServer();
+  })
+  .catch((err) => {
+    logger.error("Error during datasource initializing", err);
+    process.exit(1);
+  });
