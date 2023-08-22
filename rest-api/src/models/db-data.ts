@@ -728,6 +728,92 @@ export const COURSES: any = {
         price: 50
     },
 
+
+    1: {
+        id: 1,
+        title: 'Serverless Angular with Firebase Course',
+        longDescription: 'Serveless Angular with Firestore, Firebase Storage & Hosting, Firebase Cloud Functions & AngularFire',
+        iconUrl: 'https://s3-us-west-1.amazonaws.com/angular-university/course-images/serverless-angular-small.png',
+        category: 'BEGINNER',
+        seqNo: 10,
+        url: 'serverless-angular',
+        price: 50,
+        lessons: [
+            // Serverless Angular with Firebase Course
+            {
+                id: 30,
+                title: 'Development Environment Setup',
+                'duration': '5:38',
+                'seqNo': 1,
+            },
+
+            {
+                id: 31,
+                title: 'Introduction to the Firebase Ecosystem',
+                'duration': '5:12',
+                'seqNo': 2,
+            },
+
+            {
+                id: 32,
+                title: 'Importing Data into Firestore',
+                'duration': '4:07',
+                'seqNo': 3,
+            },
+
+            {
+                id: 33,
+                title: 'Firestore Documents in Detail',
+                'duration': '7:32',
+                'seqNo': 4,
+            },
+
+            {
+                id: 34,
+                title: 'Firestore Collections in Detail',
+                'duration': '6:28',
+                'seqNo': 5,
+            },
+
+            {
+                id: 35,
+                title: 'Firestore Unique Identifiers',
+                'duration': '4:38',
+                'seqNo': 6,
+            },
+
+            {
+                id: 36,
+                title: 'Querying Firestore Collections',
+                'duration': '7:54',
+                'seqNo': 7,
+            },
+
+            {
+                id: 37,
+                title: 'Firebase Security Rules In Detail',
+                'duration': '5:31',
+                'seqNo': 8,
+            },
+
+            {
+                id: 38,
+                title: 'Firebase Cloud Functions In Detail',
+                'duration': '8:19',
+                'seqNo': 9
+            },
+
+            {
+                id: 39,
+                title: 'Firebase Storage In Detail',
+                'duration': '7:05',
+                'seqNo': 10
+            },
+
+
+        ]
+    },
+
     16: {
         id: 16,
         title: 'Stripe Payments In Practice',

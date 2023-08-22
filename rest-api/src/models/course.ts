@@ -13,6 +13,9 @@ export class Course {
     seqNo:number;
 
     @Column()
+    url:string;
+
+    @Column()
     title:string;
 
     @Column()   
@@ -32,6 +35,6 @@ export class Course {
 
     //class relations
     @OneToMany(()=>Lesson,lesson=>lesson.course)
-    lessons:Lesson[]
+    lessons:Lesson[];
 }
 

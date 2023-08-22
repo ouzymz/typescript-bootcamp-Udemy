@@ -23,3 +23,4 @@ configurasyonlari uygulayamaz.
 dosyasinin js formatini elde edebilirsin. Ayrica ts dosyasinda bir degisiklik yapilirsa js dosyasi tsc almadan kendini update etmez..
 
 --> tsc --strictNullCheck file.ts ==> number declere edilmis bir degiskene null atamasi yapildiysa compile ederken kontrol etmek icin kullanilir..
+

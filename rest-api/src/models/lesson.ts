@@ -3,7 +3,7 @@ import { Course } from "./course";
 
 @Entity({name:"LESSONS"})
 export class Lesson {
-    [x: string]: any;
+    
     @PrimaryGeneratedColumn()
     id:number;
 

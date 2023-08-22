@@ -41,3 +41,14 @@ TypeORM Datamapper pattern:
 
 
 
+CORS: 
+
+--> npm install --save cors
+
+
+--> npm install --save body-parser :: to be able to use .body
+
+
+CURL COMMANDS: 
+//to use patch REST request with Curl
+--> curl -X PATCH http://localhost:9033/api/courses/76 -H "Content-Type:application/json" -d '{"title":"Typescript-Bootcamp(UPDATED)"}'
