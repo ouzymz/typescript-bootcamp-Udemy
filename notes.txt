@@ -24,3 +24,4 @@ dosyasinin js formatini elde edebilirsin. Ayrica ts dosyasinda bir degisiklik ya
 
 --> tsc --strictNullCheck file.ts ==> number declere edilmis bir degiskene null atamasi yapildiysa compile ederken kontrol etmek icin kullanilir..
 
+sss
