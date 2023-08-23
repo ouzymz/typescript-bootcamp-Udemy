@@ -22,8 +22,11 @@ import { findLessonsForCourse } from "./routes/find-lessons-for-courses";
 import { updateCourse } from "./routes/update-course";
 import { createCourse } from "./routes/create-course";
 import { deleteCourse } from "./routes/delete-course";
+import { createUser } from "./routes/create-user";
+import { login } from "./routes/login";
+import { checkIfAuthenticated } from "./middlewares/authentication-middleware";
+import { checkIfAdmin } from "./middlewares/admin-only-middleware";
 // import bodyParser from "body-parser";
-
 
 const cors = require("cors");
 
@@ -33,21 +36,34 @@ const app = express();
 
 function setupExpress() {
   //middlewarelerin cagirilma sirasi onemli dikkat et
-  
+
   app.use(cors({ origin: true })); //cors eklendi bu sayede globa fetchlere de respose atabilir uygulama calisirken.
   app.use(bodyParser.json());
-  
 
+  //GET ~
   app.route("/").get(root); //HTTP GET REQUEST
-  app.route("/api/courses").get(getAllCourses); //HTTP GET REQUEST
-  app.route("/api/courses/:courseUrl").get(findCourseByUrl);
-  app.route("/api/courses/:courseId/lessons").get(findLessonsForCourse); //   URL will look like = /api/courses/:courseId/lessons?pageNumber=5$pageSize=10
-  app.route("/api/courses/:courseId").patch(updateCourse) //patch is for partial update, put is for totally update
-  app.route("/api/courses").post(createCourse);
-  app.route("/api/courses/:courseId").delete(deleteCourse);
+  app.route("/api/courses").get(checkIfAuthenticated, getAllCourses); //HTTP GET REQUEST
+  app
+    .route("/api/courses/:courseUrl")
+    .get(checkIfAuthenticated, findCourseByUrl);
+  app
+    .route("/api/courses/:courseId/lessons")
+    .get(checkIfAuthenticated, findLessonsForCourse); //   URL will look like = /api/courses/:courseId/lessons?pageNumber=5$pageSize=10
+
+  //PATCH & UPDATE ~
+  app.route("/api/courses/:courseId").patch(checkIfAuthenticated, updateCourse); //patch is for partial update, put is for totally update
+
+  //POST ~
+  app.route("/api/courses").post(checkIfAuthenticated, createCourse);
+  app.route("/api/users").post(checkIfAuthenticated, checkIfAdmin, createUser);
+  app.route("/api/login").post(login);
+
+  //DELETE ~
+  app
+    .route("/api/courses/:courseId")
+    .delete(checkIfAuthenticated, deleteCourse);
 
   app.use(defaultErrorHandler); //Tells the express try to macth th erequest with any routes above,if smt goes wrong in any of th e routes, then you can ahead and use default error handler.
-
 }
 
 function startServer() {

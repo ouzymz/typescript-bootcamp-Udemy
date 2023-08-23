@@ -1,6 +1,7 @@
 import { DataSource } from "typeorm";
 import { Course } from "./models/course";
 import { Lesson } from "./models/lesson";
+import { User } from "./models/user";
 
 export const AppDataSource = new DataSource({
     type:"postgres",
@@ -9,15 +10,15 @@ export const AppDataSource = new DataSource({
     password: process.env.DB_PASSWORD,
     port: parseInt(process.env.DB_PORT as string),
     database: process.env.DB_NAME,
-    ssl:true,
-    extra:{
-        ssl:
-        {
-            rejectUnauthorized:false
-        }
-    },
+    // ssl:true,
+    // extra:{
+    //     ssl:
+    //     {
+    //         rejectUnauthorized:false
+    //     }
+    // },
     entities:[
-        Course,Lesson
+        Course,Lesson,User
     ],
     synchronize:true, //we should only use ths property in development mode with the synchronized flag.
     logging:true,

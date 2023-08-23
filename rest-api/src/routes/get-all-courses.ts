@@ -2,6 +2,7 @@ import { Response, Request, NextFunction } from "express";
 import { logger } from "../logger";
 import { AppDataSource } from "../data-source";
 import { Course } from "../models/course";
+import { RequestMore } from "../middlewares/authentication-middleware";
 
 export async function getAllCourses(
   request: Request,
@@ -9,7 +10,7 @@ export async function getAllCourses(
   next: NextFunction //responsible for enchancing response
 ) {
   try {
-    logger.debug(`Called getAllCourses()`);
+    logger.debug(`Called getAllCourses()`, (request as RequestMore)["user"]);
 
     const courses = await AppDataSource.getRepository(Course)
       .createQueryBuilder("COURSES")
